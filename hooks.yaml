@@ -1,3 +1,19 @@
+-   id: cargo-build
+    name: cargo build
+    description: Test Cargo build.
+    entry: cargo test --no-run --locked
+    language: system
+    files: \.rs$
+    pass_filenames: false
+
+-   id: cargo-test
+    name: cargo test
+    description: Run Cargo tests.
+    entry: cargo test -- 
+    language: system
+    files: \.rs$
+    pass_filenames: false
+    
 -   id: fmt
     name: fmt
     description: Format files with cargo fmt.
@@ -5,6 +21,7 @@
     language: system
     files: \.rs$
     args: []
+    
 -   id: cargo-check
     name: cargo check
     description: Check the package for errors.
@@ -12,6 +29,7 @@
     language: system
     files: \.rs$
     pass_filenames: false
+    
 -   id: cargo-clippy
     name: cargo clippy
     description: Run the Clippy linter on the package.
