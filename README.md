@@ -12,6 +12,15 @@
     -   id: cargo-check
 ```
 
+## Using in a monorepo where Cargo.toml is not in the root of the repository.
+
+```yaml
+  - repo: https://github.com/substra-it/pre-commit-rust
+    rev: v1.0
+    hooks:
+      - { id: fmt, args: [--manifest-path, ${RUST_PROJECT_PATH}/Cargo.toml, --] }
+```
+
 ## Passing arguments to rustfmt
 
 ```yaml
