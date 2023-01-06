@@ -1,3 +1,19 @@
+- id: build
+  name: build
+  description: Test Cargo build
+  entry: cargo test
+  language: system
+  types: [rust]
+  args: ["--no-run", "--locked"]
+  
+- id: test
+  name: test
+  description: Run Cargo tests
+  entry: cargo test
+  language: system
+  types: [rust]
+  args: ["--"]
+  
 - id: fmt
   name: fmt
   description: Format files with cargo fmt.
@@ -5,6 +21,7 @@
   language: system
   types: [rust]
   args: ["--"]
+  
 - id: cargo-check
   name: cargo check
   description: Check the package for errors.
@@ -12,6 +29,7 @@
   language: system
   types: [rust]
   pass_filenames: false
+  
 - id: clippy
   name: clippy
   description: Lint rust sources
